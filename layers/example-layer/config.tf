@@ -8,7 +8,7 @@ terraform {
   backend "gcs" {
     project     = "rs-tf-sandbox"
     bucket      = "w3-terraform-state"
-    prefix      = "tf-state/state"
+    prefix      = "tf-state"
     credentials = "/opt/terraform/key.json"
   }
 }
