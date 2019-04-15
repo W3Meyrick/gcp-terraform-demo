@@ -6,10 +6,10 @@ pipeline {
         changeRequest target: 'master'
       }
       steps {
-        sh 'chmod 0777 /bin/*'
-        sh './bin/lint.sh'
-        sh './bin/check_master.sh'
-        sh './bin/lint.sh'
+        sh 'chmod 0777 bin/*'
+        sh 'bin/lint.sh'
+        sh 'bin/check_master.sh'
+        sh 'bin/lint.sh'
       }
     }
     stage('Plan') {
@@ -17,7 +17,7 @@ pipeline {
         changeRequest target: 'master'
       }
       steps {
-        sh './bin/plan.sh'
+        sh 'bin/plan.sh'
       }
     }
     stage('Apply') {
@@ -25,7 +25,7 @@ pipeline {
         branch 'master'
       }
       steps {
-        sh './bin/apply.sh'
+        sh 'bin/apply.sh'
       }
     }
   }
