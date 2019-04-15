@@ -20,8 +20,9 @@ variable "healthcheck_name" {}
 variable "backendservice_name" {}
 variable "forwardingrule_name" {}
 
-# Instance template
+# Instance Template
 variable "instancegroup_name" {}
+
 variable "instancetemplate_name" {}
 variable "instancetemplate_description" {}
 variable "source_image" {}
