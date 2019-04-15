@@ -19,6 +19,7 @@ backendservice_name      = "gce-backendservice-logstash-siem-dev"
 forwardingrule_name      = "gce-forwardingrule-logstash-siem-dev"
 
 # Instance Template
+instancegroup_name            = "gce-instance-logstash-siem-dev"
 instancetemplate_name         = "gce-instancetemplate-logstash-siem-dev"             
 instancetemplate_description  = "This template is used to build the Logstash SIEM instance"
 source_image                  = "gce-imagefamily-type3-rhel7-stage3-logstash"
