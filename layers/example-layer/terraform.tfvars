@@ -8,7 +8,7 @@ gcp_region              = "europe-west1"
 gcp_zone                = "europe-west1-b" 
 gcp_state_bucket        = "w3-terraform-state"
 
-# Authentication Details
+# Authentication
 terraform_service_account = "/opt/terraform/key.json"
 
 # Network
