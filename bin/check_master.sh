@@ -8,7 +8,7 @@ WORKSPACE_DIR="$WORKING_DIR/workspace"
 LAYERS_DIR="$WORKING_DIR/layers"
 LAYERS=$(find "$LAYERS_DIR"/* -maxdepth 0 -type d -exec basename '{}' \; | sort -n)
 
-# be sure we know about the latest remote refs
+# Be sure we know about the latest remote refs
 git fetch origin
 MASTER_REF=$(git rev-parse remotes/origin/master)
 
