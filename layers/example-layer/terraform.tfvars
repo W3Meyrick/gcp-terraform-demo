@@ -3,13 +3,13 @@
 #******************************************************************************
 
 # GCP Specifics
-gcp_project             = "hsbc-6320774-sharedsvcs2-dev" 
+gcp_project             = "rs-tf-sandbox" 
 gcp_region              = "europe-west1" 
 gcp_zone                = "europe-west1-b" 
-gcp_state_bucket        = "logstash-terraform"
+gcp_state_bucket        = "w3-terraform-state"
 
 # Authentication
-terraform_service_account = "/opt/terraform/google/account.json"
+terraform_service_account = "/opt/terraform/key.json"
 
 # Network
 vpc_host_project         = "hsbc-6320774-vpchost-dev"
