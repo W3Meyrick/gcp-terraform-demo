@@ -16,8 +16,6 @@ resource "google_compute_forwarding_rule" "primary-forwarding-rule" {
   provider              = "google-beta"
   name                  = "${var.forwardingrule_name}"
   region                = "${var.gcp_region}"
-  subnetwork            = "${data.google_compute_subnetwork.primary-vpc.self_link}"
-  ip_address            = "${data.google_compute_address.static-internal-ip.self_link}"
   ip_protocol           = "TCP"
   load_balancing_scheme = "INTERNAL"
   backend_service       = "${google_compute_region_backend_service.primary-be.self_link}"

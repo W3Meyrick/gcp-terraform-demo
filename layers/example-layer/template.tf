@@ -14,8 +14,7 @@ resource "google_compute_instance_template" "primary-instance-template" {
   machine_type = "n1-standard-1"
 
   network_interface {
-    subnetwork         = "${var.primary_vpc}"
-    subnetwork_project = "${var.vpc_host_project}"
+    network = "default"
   }
 
   disk {

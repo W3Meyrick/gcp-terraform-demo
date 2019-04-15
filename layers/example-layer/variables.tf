@@ -13,9 +13,6 @@ variable "gcp_state_bucket" {}
 variable "terraform_service_account" {}
 
 # Network
-variable "vpc_host_project" {}
-
-variable "primary_vpc" {}
 variable "healthcheck_name" {}
 variable "backendservice_name" {}
 variable "forwardingrule_name" {}
