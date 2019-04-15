@@ -2,14 +2,14 @@
 # Variable Definitions
 #******************************************************************************
 
-# GCP Specifics 
+# GCP Specifics
 variable "gcp_project" {}
 
 variable "gcp_region" {}
 variable "gcp_zone" {}
 variable "gcp_state_bucket" {}
 
-# Authentication 
+# Authentication
 variable "terraform_service_account" {}
 
 # Network
@@ -22,7 +22,6 @@ variable "forwardingrule_name" {}
 
 # Instance Template
 variable "instancegroup_name" {}
-
 variable "instancetemplate_name" {}
 variable "instancetemplate_description" {}
 variable "source_image" {}
