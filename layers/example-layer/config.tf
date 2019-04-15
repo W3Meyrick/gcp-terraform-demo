@@ -6,9 +6,8 @@ provider "google-beta" {
 
 terraform {
   backend "gcs" {
-    project     = "${var.gcp_project}"
-    bucket      = "${var.gcp_state_bucket}"
-    prefix      = "state"
-    credentials = "${var.terraform_service_account}"
+    bucket      = "w3-terraform-state"
+    prefix      = "tf-state/state"
+    credentials = "/opt/terraform/key.json"
   }
 }
