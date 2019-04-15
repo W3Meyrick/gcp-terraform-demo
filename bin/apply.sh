@@ -16,7 +16,7 @@ else
 fi
 
 for LAYER in $LAYERS; do
-  # for debugging, show that these files exist
+  # for debugging, show that the files exist
   ls -la "$ARTIFACTS_DIR/"
 
   echo "Copying plan file for $LAYER"
