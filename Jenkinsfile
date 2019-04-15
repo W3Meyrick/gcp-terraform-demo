@@ -11,9 +11,9 @@ pipeline {
       steps {
         sh 'export PATH=/opt/terraform:$PATH'
         sh 'chmod 0777 bin/*'
-        sh 'bin/lint.sh'
         sh 'bin/check_master.sh'
         sh 'bin/lint.sh'
+        sh 'bin/plan.sh'
       }
     }
     stage('Plan') {
