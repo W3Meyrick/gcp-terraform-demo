@@ -4,7 +4,7 @@ resource "google_compute_instance_template" "primary-instance-template" {
   description = "${var.instancetemplate_description}"
   project     = "${var.gcp_project}"
 
-  tags = [ "${var.instance_tags}" ]
+  tags = ["${var.instance_tags}"]
 
   labels = {
     environment = "${var.label_environment}"
