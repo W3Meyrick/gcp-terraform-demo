@@ -6,6 +6,8 @@ pipeline {
         changeRequest target: 'master'
       }
       steps {
+        sh 'chmod 0777 /bin/*'
+        sh './bin/lint.sh'
         sh './bin/check_master.sh'
         sh './bin/lint.sh'
       }
