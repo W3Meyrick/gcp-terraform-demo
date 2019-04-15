@@ -16,6 +16,10 @@ MASTER_REF=$(git rev-parse remotes/origin/master)
 git log --pretty=format:'%H' -n 100 | grep -q "$MASTER_REF"
 UPTODATE=$?
 
+if [ ! -d "$WORKSPACE_DIR" ]; then
+  mkdir "$WORKSPACE_DIR" 
+fi  
+
 if [ $UPTODATE -ne 0 ]
 then
   echo "Your branch is not up to date. Exiting."
