@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  environment {
+    PATH = "/opt/terraform/:$PATH"
+  }
   stages {
     stage('Lint') {
       when {
