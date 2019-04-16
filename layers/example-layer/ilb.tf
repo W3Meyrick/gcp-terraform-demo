@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # resource "google_compute_region_backend_service" "primary-be" {
 #   provider = "google-beta"
 #   name     = "${var.backendservice_name}"
