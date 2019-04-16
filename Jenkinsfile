@@ -4,7 +4,6 @@ pipeline {
     PATH = "/opt/terraform/:$PATH"
   }
   stages {
-
     stage('Lint') {
       when {
         changeRequest target: 'master'
@@ -15,7 +14,6 @@ pipeline {
         sh 'bin/lint.sh'
       }
     }
-
     stage('Plan') {
       when {
         changeRequest target: 'master'
@@ -25,7 +23,6 @@ pipeline {
         sh 'bin/plan.sh'
       }
     }
-
     stage('Apply') {
       when {
         branch 'master'
