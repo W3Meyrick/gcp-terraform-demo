@@ -38,7 +38,7 @@ for LAYER in $LAYERS; do
   # Copy plan to GCS
   gsutil cp $ARTIFACTS_DIR/$LAYER/terraform.$LAYER.$(git rev-parse --short HEAD).plan gs://$GCS_BUCKET/artifacts/$LAYER/
 
-  # for debugging show these files exist
+  # for debugging, show these files exist
   echo "The following artifacts have been stored"
   ls -la "$ARTIFACTS_DIR/$LAYER/.terraform.$LAYER.$(git rev-parse --short HEAD).tar.gz"
   ls -la "$ARTIFACTS_DIR/$LAYER/terraform.$LAYER.$(git rev-parse --short HEAD).plan"
