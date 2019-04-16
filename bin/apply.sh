@@ -28,6 +28,6 @@ for LAYER in $LAYERS; do
   echo "terraform apply $LAYER"
   (cd "$LAYERS_DIR/$LAYER" && terraform apply -input=false -no-color "$ARTIFACTS_DIR/terraform.$LAYER.$(git rev-parse --short HEAD).plan")
 #  if [ -f "$LAYERS_DIR/$LAYER/gcp_hosts" ]; then
-#  (cd "$LAYERS_DIR/$LAYER" && gsutil cp gcp_hosts s3://$GCS_BUCKET/artifacts/)
+#  (cd "$LAYERS_DIR/$LAYER" && gsutil cp gcp_hosts gs://$GCS_BUCKET/artifacts/)
 #  fi
 done
