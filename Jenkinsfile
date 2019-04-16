@@ -22,8 +22,6 @@ pipeline {
         changeRequest target: 'master'
       }
       steps {
-        sh 'chown jenkins:jenkins bin/*'
-        sh 'chmod 0770 bin/*'
         sh 'gcloud auth activate-service-account terraform@rs-tf-sandbox.iam.gserviceaccount.com --key-file=/opt/terraform/key.json --project=rs-tf-sandbox'
         sh 'bin/plan.sh'
       }
