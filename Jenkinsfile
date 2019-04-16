@@ -4,6 +4,7 @@ pipeline {
     PATH = "/opt/terraform/:$PATH"
   }
   stages {
+
     stage('Lint') {
       when {
         changeRequest target: 'master'
@@ -17,6 +18,7 @@ pipeline {
         sh 'bin/plan.sh'
       }
     }
+
     stage('Plan') {
       when {
         changeRequest target: 'master'
@@ -28,6 +30,7 @@ pipeline {
         sh 'bin/plan.sh'
       }
     }
+
     stage('Apply') {
       when {
         branch 'master'
@@ -38,6 +41,7 @@ pipeline {
         sh 'gcloud auth activate-service-account terraform@rs-tf-sandbox.iam.gserviceaccount.com --key-file=/opt/terraform/key.json --project=rs-tf-sandbox'
         sh 'bin/apply.sh'
       }
+      
     }
   }
 }
