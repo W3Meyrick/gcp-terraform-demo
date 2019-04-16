@@ -1,5 +1,5 @@
 resource "google_compute_instance_template" "primary-instance-template" {
-#  provider    = "google-beta"
+  #  provider    = "google-beta"
   name        = "${var.instancetemplate_name}"
   description = "${var.instancetemplate_description}"
   project     = "${var.gcp_project}"
