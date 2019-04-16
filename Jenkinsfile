@@ -1,15 +1,11 @@
 pipeline {
   agent any
-  environment {
-    PATH = "/opt/terraform/:$PATH"
-  }
   stages {
     stage('Lint') {
       when {
         changeRequest target: 'master'
       }
       steps {
-        sh 'export PATH=/opt/terraform:$PATH'
         sh 'chmod 0777 bin/*'
         sh 'bin/check_master.sh'
         sh 'bin/lint.sh'
