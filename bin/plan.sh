@@ -7,7 +7,7 @@ WORKSPACE_DIR="$WORKING_DIR/workspace"
 mkdir -p "$WORKING_DIR/artifacts"
 ARTIFACTS_DIR="$WORKING_DIR/artifacts"
 LAYERS_DIR="$WORKING_DIR/layers"
-GCS_BUCKET="jenkins-terraform"
+GCS_BUCKET="w3-terraform-state"
 
 if [ -f "$WORKSPACE_DIR/changed_layers" ]; then
   LAYERS=$(cat "$WORKSPACE_DIR/changed_layers" | sort -nr)

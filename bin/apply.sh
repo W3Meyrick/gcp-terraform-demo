@@ -5,7 +5,7 @@ set -e
 WORKING_DIR=$(pwd)
 WORKSPACE_DIR="$WORKING_DIR/workspace"
 mkdir -p "$WORKING_DIR/artifacts"
-GCS_BUCKET="jenkins-terraform"
+GCS_BUCKET="w3-terraform-state"
 ARTIFACTS_DIR="$WORKING_DIR/artifacts"
 LAYERS_DIR="$WORKING_DIR/layers"
 

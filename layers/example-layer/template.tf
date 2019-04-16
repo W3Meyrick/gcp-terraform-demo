@@ -11,11 +11,10 @@ resource "google_compute_instance_template" "primary-instance-template" {
     role        = "${var.label_role}"
   }
 
-  machine_type = "n1-standard-1"
+  machine_type = "g1-small"
 
   network_interface {
-    subnetwork         = "${var.primary_vpc}"
-    subnetwork_project = "${var.vpc_host_project}"
+    network = "default"
   }
 
   disk {

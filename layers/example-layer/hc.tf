@@ -7,8 +7,8 @@ resource "google_compute_health_check" "primary-hc" {
   healthy_threshold   = 2
   unhealthy_threshold = 10
 
-  https_health_check {
-    request_path = "/login"
-    port         = 443
+  http_health_check {
+    request_path = "/"
+    port         = 80
   }
 }

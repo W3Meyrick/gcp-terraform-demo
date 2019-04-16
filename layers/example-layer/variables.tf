@@ -2,27 +2,26 @@
 # Variable Definitions
 #******************************************************************************
 
-# GCP Specifics 
+# GCP Specifics
 variable "gcp_project" {}
 
 variable "gcp_region" {}
 variable "gcp_zone" {}
 variable "gcp_state_bucket" {}
 
-# Authentication 
+# Authentication
 variable "terraform_service_account" {}
 
 # Network
-variable "vpc_host_project" {}
-
-variable "primary_vpc" {}
 variable "healthcheck_name" {}
+
 variable "backendservice_name" {}
 variable "forwardingrule_name" {}
 
 # Instance Template
-variable "instancetemplate_name" {}
+variable "instancegroup_name" {}
 
+variable "instancetemplate_name" {}
 variable "instancetemplate_description" {}
 variable "source_image" {}
 variable "service_account" {}
