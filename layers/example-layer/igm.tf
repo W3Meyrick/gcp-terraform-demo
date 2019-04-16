@@ -11,8 +11,8 @@ resource "google_compute_region_instance_group_manager" "primary-igm" {
   }
 
   named_port {
-    name = "https"
-    port = 443
+    name = "http"
+    port = 80
   }
 
   auto_healing_policies {
