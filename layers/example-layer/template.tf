@@ -16,6 +16,12 @@ resource "google_compute_instance_template" "primary-instance-template" {
   network_interface {
     network = "default"
   }
+ 
+  access_config {
+    # The presence of this property assigns a public IP address to each Compute Instance. It is intentionally left
+    # blank so that an external IP address is selected automatically.
+    nat_ip = ""
+  }
 
   disk {
     source_image = "${var.source_image}"
