@@ -26,7 +26,7 @@ for LAYER in $LAYERS; do
   (cd "$LAYERS_DIR/$LAYER" && terraform init)
 
   echo "terraform apply $LAYER"
-  (cd "$LAYERS_DIR/$LAYER" && terraform apply -input=false -no-color "$ARTIFACTS_DIR/$LAYER/terraform.$LAYER.$(git log --pretty=format:"%h" | sed -n 2p).plan")
+  (cd "$LAYERS_DIR/$LAYER" && terraform apply -input=false -no-color "$ARTIFACTS_DIR/terraform.$LAYER.$(git log --pretty=format:"%h" | sed -n 2p).plan")
 
 #  if [ -f "$LAYERS_DIR/$LAYER/gcp_hosts" ]; then
 #  (cd "$LAYERS_DIR/$LAYER" && gsutil cp gcp_hosts gs://$GCS_BUCKET/artifacts/$LAYER/)
