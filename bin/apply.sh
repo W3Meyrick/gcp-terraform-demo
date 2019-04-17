@@ -20,13 +20,13 @@ for LAYER in $LAYERS; do
   ls -la "$ARTIFACTS_DIR/"
 
   echo "Copying plan file for $LAYER"
-  gsutil cp gs://$GCS_BUCKET/artifacts/$LAYER/terraform.$LAYER.$(git log --pretty=format:"%h" | sed -n 2p).plan $ARTIFACTS_DIR
+  gsutil cp gs://$GCS_BUCKET/artifacts/$LAYER/terraform.$LAYER.$(git log --pretty=format:"%h" | sed -n 3p).plan $ARTIFACTS_DIR
 
   echo "terraform init  $LAYER"
   (cd "$LAYERS_DIR/$LAYER" && terraform init)
 
   echo "terraform apply $LAYER"
-  (cd "$LAYERS_DIR/$LAYER" && terraform apply -input=false -no-color "$ARTIFACTS_DIR/terraform.$LAYER.$(git log --pretty=format:"%h" | sed -n 2p).plan")
+  (cd "$LAYERS_DIR/$LAYER" && terraform apply -input=false -no-color "$ARTIFACTS_DIR/terraform.$LAYER.$(git log --pretty=format:"%h" | sed -n 3p).plan")
 
 #  if [ -f "$LAYERS_DIR/$LAYER/gcp_hosts" ]; then
 #  (cd "$LAYERS_DIR/$LAYER" && gsutil cp gcp_hosts gs://$GCS_BUCKET/artifacts/$LAYER/)
