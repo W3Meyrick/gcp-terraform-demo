@@ -25,21 +25,21 @@ for LAYER in $LAYERS; do
   fi  
 
   # cache .terraform during the plan
-  (cd "$LAYERS_DIR/$LAYER" && tar -czf "$ARTIFACTS_DIR/$LAYER/.terraform.$LAYER.$(git rev-parse --short HEAD).tar.gz" .terraform)
+  (cd "$LAYERS_DIR/$LAYER" && tar -czf "$ARTIFACTS_DIR/$LAYER/.terraform.$LAYER.$(git rev-parse --short origin/master).tar.gz" .terraform)
 
   echo "terraform plan $LAYER"
-  (cd "$LAYERS_DIR/$LAYER" && terraform plan -no-color -input=false -out="$ARTIFACTS_DIR/$LAYER/terraform.$LAYER.$(git rev-parse --short HEAD).plan" | tee "$LAYERS_DIR/full_plan_output.log" | grep -v "Refreshing state" )
+  (cd "$LAYERS_DIR/$LAYER" && terraform plan -no-color -input=false -out="$ARTIFACTS_DIR/$LAYER/terraform.$LAYER.$(git rev-parse --short origin/master).plan" | tee "$LAYERS_DIR/full_plan_output.log" | grep -v "Refreshing state" )
 
   gsutil rm gs://$GCS_BUCKET/artifacts/$LAYER/** || true
 
   # Copy archive to GCS
-  gsutil cp $ARTIFACTS_DIR/$LAYER/.terraform.$LAYER.$(git rev-parse --short HEAD).tar.gz gs://$GCS_BUCKET/artifacts/$LAYER/
+  gsutil cp $ARTIFACTS_DIR/$LAYER/.terraform.$LAYER.$(git rev-parse --short origin/master).tar.gz gs://$GCS_BUCKET/artifacts/$LAYER/
 
   # Copy plan to GCS
-  gsutil cp $ARTIFACTS_DIR/$LAYER/terraform.$LAYER.$(git rev-parse --short HEAD).plan gs://$GCS_BUCKET/artifacts/$LAYER/
+  gsutil cp $ARTIFACTS_DIR/$LAYER/terraform.$LAYER.$(git rev-parse --short origin/master).plan gs://$GCS_BUCKET/artifacts/$LAYER/
 
   # for debugging, show these files exist
   echo "The following artifacts have been stored"
-  ls -la "$ARTIFACTS_DIR/$LAYER/.terraform.$LAYER.$(git rev-parse --short HEAD).tar.gz"
-  ls -la "$ARTIFACTS_DIR/$LAYER/terraform.$LAYER.$(git rev-parse --short HEAD).plan"
+  ls -la "$ARTIFACTS_DIR/$LAYER/.terraform.$LAYER.$(git rev-parse --short origin/master).tar.gz"
+  ls -la "$ARTIFACTS_DIR/$LAYER/terraform.$LAYER.$(git rev-parse --short origin/master).plan"
 done
