@@ -2,7 +2,7 @@
 # Variable Values
 #******************************************************************************
 
-# GCP Specifics
+# GCP Account and Project Information
 gcp_project             = "rs-tf-sandbox" 
 gcp_region              = "europe-west1" 
 gcp_zone                = "europe-west1-b" 
